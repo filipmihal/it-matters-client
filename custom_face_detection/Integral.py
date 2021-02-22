@@ -16,3 +16,13 @@ class Integral:
                 if x != 0 and y != 0:
                     integral_image[y][x] -= integral_image[y-1][x-1]
         return integral_image
+    
+    def get_region(self, region):
+        result = self.image[region.y+region.height-1][region.x+region.width-1]
+        if region.x != 0:
+            result -= self.image[region.y+region.height-1][region.x-1]
+        if region.y != 0:
+            result -= self.image[region.y-1][region.x+region.width-1]
+        if region.x != 0 and region.y != 0:
+            result += self.image[region.y-1][region.x-1] 
+        return result
