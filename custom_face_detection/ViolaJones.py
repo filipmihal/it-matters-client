@@ -26,7 +26,6 @@ class ViolaJones:
         for t in range(self.weak_classifiers):
             weights = weights / np.linalg.norm(weights)
             weak_classifiers = self.train_weak(features, labels, feature_templates, weights)
-            print('ahoj')
             clf, error, accuracy = self.select_best(weak_classifiers, weights, training_data, labels)
             beta = error / (1.0 - error)
             for i in range(len(accuracy)):
