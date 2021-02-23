@@ -1,3 +1,5 @@
-face-recognition
 numpy
 mtcnn
+scikit-image
+opencv-python
+requests

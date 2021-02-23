@@ -140,7 +140,13 @@ class ViolaJones:
         with open(filename+".pkl", 'wb') as f:
             pickle.dump(self, f)
     
+    def test_model(self, images, labels):
+        correct = 0
+        for index, image in enumerate(images):
+            correct += 1 if self.classify(image) == labels[index] else 0
+        print(f" correct: {correct} out of {len(labels)} percentage: {correct/len(labels)}")
+    
     @staticmethod
     def load(filename):
-        with open(filename+".pkl", 'rb') as f:
+        with open(filename, 'rb') as f:
             return pickle.load(f)
