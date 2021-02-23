@@ -1,7 +1,10 @@
 import numpy as np
 import math
 import pickle
-import Feature, Integral, Region, WeakClassifier
+from Feature import Feature
+from Integral import Integral
+from Region import Region
+from WeakClassifier import WeakClassifier
 
 
 class ViolaJones:
