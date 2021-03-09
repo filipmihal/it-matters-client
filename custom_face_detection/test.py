@@ -26,5 +26,5 @@ def create_pkl():
 with open('dataset/test_data.pkl','rb') as f:
      images = pickle.load(f)
 
-VJ = ViolaJones.load('result.pkl')
+VJ = ViolaJones.load('result_6000.pkl')
 VJ.test_model(images, labels)
